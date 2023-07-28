@@ -24,7 +24,6 @@ class Timer extends React.Component {
             clearInterval(interval);
         }
     }
-    componentWillUnmount
 
     render() {
 
