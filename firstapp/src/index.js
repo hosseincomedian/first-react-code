@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Hello from './hello';
 import Timer from './timer';
-
+import './style.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 class App extends React.Component {

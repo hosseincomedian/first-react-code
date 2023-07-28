@@ -1,0 +1,52 @@
+
+body{
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+button {
+    margin: 2px 10px;
+    padding: 15px;
+    color: aliceblue;
+    border-radius: 50%;
+    border: 0;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+button:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 50px;
+}
+
+button.start {
+    background-color: green;
+}
+
+
+button.stop {
+    background-color: red;
+}
+
+
+button.reset {
+    background-color: rgb(128, 130, 131);
+}
+
+#root {
+    box-shadow: 0px 0px 100px  #908b8b;
+    padding: 100px;
+    /* align-content: center; */
+    /* margin: 5% auto ; */
+    border-radius: 50%;
+    
+}
