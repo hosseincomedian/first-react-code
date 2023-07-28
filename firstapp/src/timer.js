@@ -20,7 +20,7 @@ class Timer extends React.Component {
         }
     }
 
-    startTimer = () => {
+    start = () => {
         interval = setInterval(() => {
             this.setState({
                 num: this.state.num - 1
@@ -28,8 +28,14 @@ class Timer extends React.Component {
         }, 1000);
     }
 
-    stopTimer = () => {
+    stop = () => {
         clearInterval(interval)
+    }
+
+    reset = () => {
+        this.setState({
+            num: 10
+        })
     }
 
     render() {
@@ -39,8 +45,9 @@ class Timer extends React.Component {
                 <h2>
                     {this.state.num}
                 </h2>
-                <button onClick={this.startTimer}>start</button>
-                <button onClick={this.stopTimer}>stop</button>
+                <button onClick={this.start}>start</button>
+                <button onClick={this.stop}>stop</button>
+                <button onClick={this.reset}>reset</button>
             </>
         )
     }
