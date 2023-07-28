@@ -8,7 +8,7 @@ class Timer extends React.Component {
         super();
         this.state = {
             num: 10,
-            is_started: false
+            isStart: false
         }
     }
 
@@ -31,9 +31,9 @@ class Timer extends React.Component {
     }
 
     start = () => {
-        if (!this.state.is_started) {
+        if (!this.state.isStart) {
             this.setState({
-                is_started: true
+                isStart: true
             })
             this.setInterval()
         }
@@ -42,7 +42,7 @@ class Timer extends React.Component {
     stop = () => {
         clearInterval(interval)
         this.setState({
-            is_started: false
+            isStart: false
         })
     }
 
