@@ -6,10 +6,17 @@ import Timer from './timer';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 class App extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      title: "num: "
+    }
+  }
+
   render() {
     return (
       <div>
-        <Hello />
+        <Hello title = {this.state.title}/>
         <Timer />
       </div>
     )

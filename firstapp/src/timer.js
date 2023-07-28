@@ -29,7 +29,7 @@ class Timer extends React.Component {
 
         return (
             <h2>
-                it is {this.state.num}
+                {this.state.num}
             </h2>
         )
     }
