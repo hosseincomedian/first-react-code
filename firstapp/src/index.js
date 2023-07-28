@@ -1,33 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import Hello from './hello';
 import Timer from './timer';
 import './style.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-class App extends React.Component {
-  constructor(){
-    super();
-    this.state = {
-      title: "num: "
-    }
-  }
+const App = () => {
+  const [title, setTitle] = useState("num: ")
 
-  render() {
-    return (
-      <div>
-        <Hello title = {this.state.title}/>
-        <Timer />
-      </div>
-    )
-  }
+  return (
+    <div>
+      <Hello title={title} />
+      <Timer />
+    </div>
+  )
+
 }
 
 root.render(<App />);
 
 
-// const tick = () => {
-// }
-
-// setInterval (()=> tick(), 1000);
 

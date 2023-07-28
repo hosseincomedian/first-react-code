@@ -1,11 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-class Hello extends React.Component {
-    render() {
-        return (
-            <h1>{this.props.title}</h1>
-        )
-    }
+const Hello = (props) => {
+    return (
+        <h1>{props.title}</h1>
+    )
 }
 
 export default Hello;

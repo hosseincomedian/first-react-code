@@ -1,70 +1,72 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 var interval;
 
-class Timer extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            num: 10,
-            isStart: false
-        }
-    }
+const Timer = () => {
+    const [num, setNum] = useState(10);
+    const [isStart, setIsStart] = useState(false);
 
-    setInterval = () => {
+    const setmyInterval = () => {
         interval = setInterval(() => {
-            this.setState({
-                num: this.state.num - 1
-            })
+            setNum(num => num - 1)
         }, 1000);
     }
 
-    stopInterval = () => {
+    const stopmyInterval = () => {
         clearInterval(interval);
+        setIsStart(false);
     }
 
-    componentDidUpdate() {
-        if (this.state.num == 0) {
-            this.stopInterval();
+    useEffect(() => {
+        if (num == 0) {
+            stopmyInterval();
+        }
+    }, [num])
+
+    const start = () => {
+        if (!isStart) {
+            setIsStart(true)
+            if (num == 0) {
+                setNum(10)
+            }
+            setmyInterval()
+
         }
     }
-
-    start = () => {
-        if (!this.state.isStart) {
-            this.setState({
-                isStart: true
-            })
-            this.setInterval()
-        }
+    const stop = () => {
+        clearInterval(interval);
+        setIsStart(false);
     }
 
-    stop = () => {
-        clearInterval(interval)
-        this.setState({
-            isStart: false
-        })
+    const reset = () => {
+        setNum(10);
     }
-
-    reset = () => {
-        this.setState({
-            num: 10
-        })
-    }
-
-    render() {
-
-        return (
-            <>
-                <h2>
-                    {this.state.num}
-                </h2>
-                <button className='timer_btn start' onClick={this.start}>start</button>
-                <button className='timer_btn stop' onClick={this.stop}>stop</button>
-                <button className='timer_btn reset' onClick={this.reset}>reset</button>
-            </>
-        )
-    }
+    return (
+        <>
+            <h2>
+                {num}
+            </h2>
+            <button className='timer_btn start' onClick={start}>start</button>
+            <button className='timer_btn stop' onClick={stop}>stop</button>
+            <button className='timer_btn reset' onClick={reset}>reset</button>
+        </>
+    )
 }
+
+// class Timer extends React.Component {
+
+
+
+
+
+
+
+//     
+
+
+
+
+// }
 
 export default Timer;
