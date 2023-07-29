@@ -22,6 +22,9 @@ const Timer = () => {
         if (num == 0) {
             stopmyInterval();
         }
+        return() => {
+            stopmyInterval();
+        }
     }, [num])
 
     const start = () => {
@@ -54,19 +57,5 @@ const Timer = () => {
     )
 }
 
-// class Timer extends React.Component {
-
-
-
-
-
-
-
-//     
-
-
-
-
-// }
 
 export default Timer;

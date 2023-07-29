@@ -48,5 +48,8 @@ button.reset {
     /* align-content: center; */
     /* margin: 5% auto ; */
     border-radius: 50%;
-    
+}
+
+#root:hover {
+    box-shadow: 0px 0px 50px  #908b8b;
 }
