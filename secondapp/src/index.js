@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import Todo from './Todo';
+import Todo from './todo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const App = () => {

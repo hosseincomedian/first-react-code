@@ -1,5 +1,5 @@
 import Reacrt, { Fragment } from 'react';
-import Navbar from './Navbar';
+import Navbar from './navbar';
 
 const Todo = () => {
     return (
