@@ -4,5 +4,5 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./firstapp:/app
+      - ./secondapp:/app
     command: npm start
