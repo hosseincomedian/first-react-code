@@ -1,8 +1,13 @@
-import {useContext, createRef} from "react";
+import {useContext, useRef, useEffect} from "react";
 import MyContext from "./itemsContext";
 const Form = () => {
   const {items, setItems} = useContext(MyContext)
-  const inputTodoRef = createRef()
+  const inputTodoRef = useRef(null)
+
+  useEffect(() => {
+    console.log("ref")
+    inputTodoRef.current.focus();
+  },[])
 
   const submitHandler = () => {
     if (inputTodoRef.current.value){
@@ -14,7 +19,6 @@ const Form = () => {
     }
     inputTodoRef.current.value="";
   }
-
   return (
     <form onSubmit={(event)=>event.preventDefault()}>
       <input ref={inputTodoRef} type="text" placeholder="Add new todo"/>
