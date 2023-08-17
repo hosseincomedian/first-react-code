@@ -1,4 +1,4 @@
-import {useState, useContext, useEffect} from "react";
+import {useState, useContext} from "react";
 import MyContext from "./itemsContext";
 const Form = () => {
   const {items, setItems} = useContext(MyContext)
